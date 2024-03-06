@@ -3,6 +3,7 @@
  */
 package edu.badpals.stockx;
 
+import edu.badpals.stockx.item.Bid;
 import edu.badpals.stockx.item.Item;
 import edu.badpals.stockx.item.Sneaker;
 
@@ -19,6 +20,18 @@ public class Stockx {
 
         Item sneaker = new Sneaker("555088-105", "Jordan 1 Retro High Dark Mocha");
         System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Crear bids
+         * y añadirlas a la zapatilla
+         * en sus offers.
+         */
+        Bid bid = new Bid("13", 550);
+        sneaker.add(bid);
+        sneaker.add(new Bid("6", 200));
+        sneaker.add(new Bid("9.5", 479));
+        sneaker.add(new Bid("13", 338));
+        sneaker.add(new Bid("9.5", 480));
 
     }
     
