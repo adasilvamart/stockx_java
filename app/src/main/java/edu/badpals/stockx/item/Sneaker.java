@@ -2,6 +2,7 @@ package edu.badpals.stockx.item;
 
 import java.util.ArrayList;
 import java.util.List;
+import edu.badpals.stockx.item.Offer;
 
 public class Sneaker implements Item {
     public String style = "";

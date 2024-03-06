@@ -7,6 +7,8 @@ import edu.badpals.stockx.item.Ask;
 import edu.badpals.stockx.item.Bid;
 import edu.badpals.stockx.item.Item;
 import edu.badpals.stockx.item.Sneaker;
+import main.java.edu.badpals.stockx.criteria.Bids;
+import main.java.edu.badpals.stockx.criteria.Criteria;
 
 public class Stockx {
     public static void main(String[] args) {
@@ -46,7 +48,16 @@ public class Stockx {
         sneaker.add(new Ask("9.5", 333));
         sneaker.add(new Ask("9.5", 340));
         sneaker.add(new Ask("13", 330));
+        
+        /**
+         * Crear el filtro "Bids" que filtra
+         * solo las bids de entre las 
+         * offers de la zapatilla. 
+         */
 
+        Criteria bids = new Bids();
+        System.out.println("\n\t\t All BIDS");
+        bids.checkCriteria(sneaker).forEach(System.out::print);
     }
     
     public static String draw(Item sneaker) {
