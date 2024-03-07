@@ -3,12 +3,12 @@
  */
 package edu.badpals.stockx;
 
+import edu.badpals.stockx.criteria.Criteria;
 import edu.badpals.stockx.item.Ask;
 import edu.badpals.stockx.item.Bid;
 import edu.badpals.stockx.item.Item;
 import edu.badpals.stockx.item.Sneaker;
-import main.java.edu.badpals.stockx.criteria.Bids;
-import main.java.edu.badpals.stockx.criteria.Criteria;
+import edu.badpals.stockx.criteria.Bids;
 
 public class Stockx {
     public static void main(String[] args) {
