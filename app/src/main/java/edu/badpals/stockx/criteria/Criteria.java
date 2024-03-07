@@ -1,4 +1,4 @@
-package edu.badpals.stockx.criteria;
+package main.java.edu.badpals.stockx.criteria;
 
 import java.util.List;
 import edu.badpals.stockx.item.Offer;
