@@ -12,7 +12,6 @@ public class Sales implements Criteria {
     public Sales(){
     }
 
-    @Override
     public List<Offer> checkCriteria(Item item) {
         return item.offers().stream()
                             .filter(Sale.class::isInstance)

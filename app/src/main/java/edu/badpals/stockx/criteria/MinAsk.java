@@ -12,7 +12,6 @@ public class MinAsk implements Criteria {
     public MinAsk() {
     }
 
-    @Override
     public List<Offer> checkCriteria(Item item) {
 
         Asks asksFilter = new Asks();

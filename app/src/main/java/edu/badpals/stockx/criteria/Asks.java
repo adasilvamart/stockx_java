@@ -10,7 +10,6 @@ public class Asks implements Criteria {
     
     public Asks() {} 
 
-    @Override
     public List<Offer> checkCriteria(Item item) {
         return item.offers().stream()
                             .filter(Ask.class::isInstance)

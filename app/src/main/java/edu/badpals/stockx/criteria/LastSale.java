@@ -10,7 +10,6 @@ public class LastSale implements Criteria {
     public LastSale() {
     }
 
-    @Override
     public List<Offer> checkCriteria(Item item) {
         Sales salesFilter = new Sales();
         return salesFilter.checkCriteria(item).getLast();
