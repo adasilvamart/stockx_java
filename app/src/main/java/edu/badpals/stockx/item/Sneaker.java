@@ -19,7 +19,7 @@ public class Sneaker implements Item {
     public Object getStyle() {
         return this.style;
     }
-    
+
     public Object getName() {
         return this.name;
     }
@@ -52,7 +52,7 @@ public class Sneaker implements Item {
         offerList.add(offer);
     }
 
-    public List<Offer> offers(){
+    public List<Offer> offers() {
         return this.offerList;
     }
 

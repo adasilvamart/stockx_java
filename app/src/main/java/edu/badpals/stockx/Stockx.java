@@ -5,6 +5,7 @@ package edu.badpals.stockx;
 
 import edu.badpals.stockx.criteria.Criteria;
 import edu.badpals.stockx.criteria.MaxBid;
+import edu.badpals.stockx.criteria.MinAsk;
 import edu.badpals.stockx.item.Ask;
 import edu.badpals.stockx.item.Bid;
 import edu.badpals.stockx.item.Item;
@@ -19,7 +20,7 @@ import edu.badpals.stockx.criteria.Bids;
 public class Stockx {
     public static void main(String[] args) {
         /**
-         * Crear la zapatilla 
+         * Crear la zapatilla
          * y printar sus datos.
          * 
          * Lee la funcion draw() del main
@@ -54,11 +55,11 @@ public class Stockx {
         sneaker.add(new Ask("9.5", 333));
         sneaker.add(new Ask("9.5", 340));
         sneaker.add(new Ask("13", 330));
-        
+
         /**
          * Crear el filtro "Bids" que filtra
-         * solo las bids de entre las 
-         * offers de la zapatilla. 
+         * solo las bids de entre las
+         * offers de la zapatilla.
          */
 
         Criteria bids = new Bids();
@@ -68,7 +69,7 @@ public class Stockx {
         /**
          * Crea el filtro "Asks" que filtra
          * solo las asks de entre las
-         * offers de la zapatilla. 
+         * offers de la zapatilla.
          */
 
         Criteria asks = new Asks();
@@ -77,7 +78,7 @@ public class Stockx {
 
         /**
          * Muestra la bid maxima
-         * de la zapatilla. 
+         * de la zapatilla.
          * 
          * Crea el filtro MaxBid que filtra
          * el maximo de las bids de la zapatilla.
@@ -88,26 +89,42 @@ public class Stockx {
          * propiedad bid de sneaker.
          */
 
-         Criteria maxBid = new MaxBid();
-         List<Offer> maximum = maxBid.checkCriteria(sneaker);
-         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
-         System.out.println(Stockx.draw(sneaker));
- 
-    }
-    
-    public static String draw(Item sneaker) {
-        return
-        "\n\n\t\t" + sneaker.getAsk() + " Buy\t" 
-        + sneaker.getBid() + " Sell \n" +  
-
-        "\t\t" + " _    _" + "\n" +
-        "\t\t" + "(_\\__/(,_" + "\n" +
-        "\t\t" + "| \\ `_////-._" + "\n" +
-        "\t\t" + "J_/___\"=> __/`\\" + "\n" +
-        "\t\t" + "|=====;__/___./" + "\n" +
-        "\t\t" + "\'-\'-\'-\"\"\"\"\"\"\"`" + "\n" +
+        Criteria maxBid = new MaxBid();
+        List<Offer> maximum = maxBid.checkCriteria(sneaker);
+        sneaker.setBid(maximum.isEmpty() ? 0 : maximum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
         
-        "\t" + sneaker.toString() + "\n" +
-        "\t\tlast sale: " + sneaker.getSale();
+        /**
+         * Muestra la ask minima
+         * de la zapatilla. 
+         * 
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         * 
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
+
+        Criteria minAsk = new MinAsk();
+        List<Offer> minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+    }
+
+    public static String draw(Item sneaker) {
+        return "\n\n\t\t" + sneaker.getAsk() + " Buy\t"
+                + sneaker.getBid() + " Sell \n" +
+
+                "\t\t" + " _    _" + "\n" +
+                "\t\t" + "(_\\__/(,_" + "\n" +
+                "\t\t" + "| \\ `_////-._" + "\n" +
+                "\t\t" + "J_/___\"=> __/`\\" + "\n" +
+                "\t\t" + "|=====;__/___./" + "\n" +
+                "\t\t" + "\'-\'-\'-\"\"\"\"\"\"\"`" + "\n" +
+
+                "\t" + sneaker.toString() + "\n" +
+                "\t\tlast sale: " + sneaker.getSale();
     }
 }
