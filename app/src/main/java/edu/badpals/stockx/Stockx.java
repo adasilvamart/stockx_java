@@ -74,6 +74,25 @@ public class Stockx {
         Criteria asks = new Asks();
         System.out.println("\n\t\t All ASKS");
         asks.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Muestra la bid maxima
+         * de la zapatilla. 
+         * 
+         * Crea el filtro MaxBid que filtra
+         * el maximo de las bids de la zapatilla.
+         * Devuelve la bid maxima como unico
+         * elemento de una lista de offers.
+         * 
+         * Guarda esta bid maxima en la
+         * propiedad bid de sneaker.
+         */
+
+         Criteria maxBid = new MaxBid();
+         List<Offer> maximum = maxBid.checkCriteria(sneaker);
+         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
+         System.out.println(Stockx.draw(sneaker));
+ 
     }
     
     public static String draw(Item sneaker) {
