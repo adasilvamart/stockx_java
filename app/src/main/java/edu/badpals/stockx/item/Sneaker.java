@@ -2,15 +2,14 @@ package edu.badpals.stockx.item;
 
 import java.util.ArrayList;
 import java.util.List;
-import edu.badpals.stockx.item.Offer;
 
 public class Sneaker implements Item {
-    public String style = "";
-    public String name = "";
-    public int sale = 0;
-    public int ask = 0;
-    public int bid = 0;
-    public List<Offer> offerList = new ArrayList<>();
+    private String style = "";
+    private String name = "";
+    private int sale = 0;
+    private int ask = 0;
+    private int bid = 0;
+    private List<Offer> offerList = new ArrayList<>();
 
     public Sneaker(String style, String name) {
         this.style = style;
