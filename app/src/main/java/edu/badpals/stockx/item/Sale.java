@@ -1,6 +1,4 @@
-package main.java.edu.badpals.stockx.item;
-
-import edu.badpals.stockx.item.Offer;
+package edu.badpals.stockx.item;
 
 public class Sale implements Offer {
     private String size = "";

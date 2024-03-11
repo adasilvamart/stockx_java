@@ -1,11 +1,12 @@
-package main.java.edu.badpals.stockx.criteria;
+package edu.badpals.stockx.criteria;
 
-import java.util.Comparator;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.List;
 
 import edu.badpals.stockx.item.Item;
-import main.java.edu.badpals.stockx.item.Sale;
+import edu.badpals.stockx.item.Sale;
+import edu.badpals.stockx.item.Offer;
+
 
 public class Sales implements Criteria {
     
