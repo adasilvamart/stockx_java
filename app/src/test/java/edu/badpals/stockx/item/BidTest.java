@@ -25,7 +25,7 @@ public class BidTest {
 
     @Test
     public void testBidCompareToMore() {
-        Bid firstBid = new Bid("9.5", 120);
+        Bid firstBid = new Bid("9.5", 140);
         Bid secondBid = new Bid("9.5", 130);
         int expResult = 1;
         assertEquals(firstBid.compareTo(secondBid), expResult);
